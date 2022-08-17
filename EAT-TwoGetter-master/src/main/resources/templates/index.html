@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/css/profileModal.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/boardModal.css" rel="stylesheet"/>
+    <link href="css/map.css" rel="stylesheet"/>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="index.html">EAT-Two Getter</a>
+    Sidebar Toggle
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <div class="container">
+
+    </div>
+    <p class= "mt-3" style="color: white; width: 100px;">비로그인</p>
+    <div>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="/account/login">Login</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <a class="nav-link" href="index.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Interface</div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Layouts
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                        Pages
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                Authentication
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="login.html">Login</a>
+                                    <a class="nav-link" href="register.html">Register</a>
+                                    <a class="nav-link" href="password.html">Forgot Password</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                Error
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="401.html">401 Page</a>
+                                    <a class="nav-link" href="404.html">404 Page</a>
+                                    <a class="nav-link" href="500.html">500 Page</a>
+                                </nav>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="sb-sidenav-menu-heading">Addons</div>
+                    <a class="nav-link" href="charts.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Charts
+                    </a>
+                    <a class="nav-link" href="tables.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Tables
+                    </a>
+                </div>
+            </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as:</div>
+                Start Bootstrap
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <div class="map_wrap">
+                    <div id="map" style="width:100%;height:500px;"></div>
+                    <ul id="category">
+                        <li id="BK9" data-order="0">
+                            <span class="category_bg bank"></span>
+                            은행
+                        </li>
+                        <li id="MT1" data-order="1">
+                            <span class="category_bg mart"></span>
+                            마트
+                        </li>
+                        <li id="PM9" data-order="2">
+                            <span class="category_bg pharmacy"></span>
+                            약국
+                        </li>
+                        <li id="OL7" data-order="3">
+                            <span class="category_bg oil"></span>
+                            주유소
+                        </li>
+                        <li id="CE7" data-order="4">
+                            <span class="category_bg cafe"></span>
+                            카페
+                        </li>
+                        <li id="CS2" data-order="5">
+                            <span class="category_bg store"></span>
+                            편의점
+                        </li>
+                    </ul>
+
+                    <img id="pin" src="/images/pin.png" alt="pin" />
+                    <div id="address_view">
+                        <p style="font-size: 25px; font-weight: bold">&nbsp;현재 위치</p>
+                        <span id="centerAddr" style="font-size: 20px"></span>
+                        <!--현재위치창에 위도, 경도 표시한다.-->
+                        <span id="centerLatLng" style="front-size: 20px"></span>
+                        <button type="button" class="btn btn-success" id="build_marker">모임 생성</button>
+                    </div>
+                </div>
+            </div>
+            <!--모임생성 게시판 모달 구현-->
+            <div class="boardModal">
+                <div class="boardModal_body">
+                    <div>모달게시판 구현예정 입니다!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
+                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.</div>
+                    <button type="button" class="btn btn-secondary boardModal_close">닫기</button>
+                </div>
+            </div>
+            <!--모임생성 게시판 모달 구현 끝-->
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=374dc9ec4e95ae00f4f8e366bf25c14e&libraries=services"></script>
+<script>
+    // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
+    var placeOverlay = new kakao.maps.CustomOverlay({zIndex:1}),
+        contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다
+        markers = [], // 마커를 담을 배열입니다
+        currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
+
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+            level: 2 // 지도의 확대 레벨
+        };
+
+    // 지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    // 현 위치 반환을 위한 객체를 생성합니다.
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    // 장소 검색 객체를 생성합니다
+    var ps = new kakao.maps.services.Places(map);
+
+    // 지도에 idle 이벤트를 등록합니다
+    kakao.maps.event.addListener(map, 'idle', searchPlaces);
+
+    // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다
+    contentNode.className = 'placeinfo_wrap';
+
+    // 커스텀 오버레이의 컨텐츠 노드에 mousedown, touchstart 이벤트가 발생했을때
+    // 지도 객체에 이벤트가 전달되지 않도록 이벤트 핸들러로 kakao.maps.event.preventMap 메소드를 등록합니다
+    addEventHandle(contentNode, 'mousedown', kakao.maps.event.preventMap);
+    addEventHandle(contentNode, 'touchstart', kakao.maps.event.preventMap);
+
+    // 커스텀 오버레이 컨텐츠를 설정합니다
+    placeOverlay.setContent(contentNode);
+
+    // 각 카테고리에 클릭 이벤트를 등록합니다
+    addCategoryClickEvent();
+
+    // 엘리먼트에 이벤트 핸들러를 등록하는 함수입니다
+    function addEventHandle(target, type, callback) {
+        if (target.addEventListener) {
+            target.addEventListener(type, callback);
+        } else {
+            target.attachEvent('on' + type, callback);
+        }
+    }
+
+    // 카테고리 검색을 요청하는 함수입니다
+    function searchPlaces() {
+        if (!currCategory) {
+            return;
+        }
+
+        // 커스텀 오버레이를 숨깁니다
+        placeOverlay.setMap(null);
+
+        // 지도에 표시되고 있는 마커를 제거합니다
+        removeMarker();
+
+        ps.categorySearch(currCategory, placesSearchCB, {useMapBounds:true});
+    }
+
+    // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+    function placesSearchCB(data, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+
+            // 정상적으로 검색이 완료됐으면 지도에 마커를 표출합니다
+            displayPlaces(data);
+        } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+            // 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
+
+        } else if (status === kakao.maps.services.Status.ERROR) {
+            // 에러로 인해 검색결과가 나오지 않은 경우 해야할 처리가 있다면 이곳에 작성해 주세요
+
+        }
+    }
+
+    // 지도에 마커를 표출하는 함수입니다
+    function displayPlaces(places) {
+
+        // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
+        // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+        var order = document.getElementById(currCategory).getAttribute('data-order');
+
+        for ( var i=0; i<places.length; i++ ) {
+            // 마커를 생성하고 지도에 표시합니다
+            var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
+
+            // 마커와 검색결과 항목을 클릭 했을 때
+            // 장소정보를 표출하도록 클릭 이벤트를 등록합니다
+            (function(marker, place) {
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    displayPlaceInfo(place);
+                });
+            })(marker, places[i]);
+        }
+    }
+
+    // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+    function addMarker(position, order) {
+        var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+            imageSize = new kakao.maps.Size(27, 28),  // 마커 이미지의 크기
+            imgOptions =  {
+                spriteSize : new kakao.maps.Size(72, 208), // 스프라이트 이미지의 크기
+                spriteOrigin : new kakao.maps.Point(46, (order*36)), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+                offset: new kakao.maps.Point(11, 28) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+            },
+            markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+            marker = new kakao.maps.Marker({
+                position: position, // 마커의 위치
+                image: markerImage
+            });
+
+        marker.setMap(map); // 지도 위에 마커를 표출합니다
+        markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+
+        return marker;
+    }
+
+    // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+    function removeMarker() {
+        for ( var i = 0; i < markers.length; i++ ) {
+            markers[i].setMap(null);
+        }
+        markers = [];
+    }
+
+    // 클릭한 마커에 대한 장소 상세정보를 커스텀 오버레이로 표시하는 함수입니다
+    function displayPlaceInfo (place) {
+        var content = '<div class="placeinfo">' +
+            '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+
+        if (place.road_address_name) {
+            content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
+                '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
+        }  else {
+            content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
+        }
+
+        content += '    <span class="tel">' + place.phone + '</span>' +
+            '</div>' +
+            '<div class="after"></div>';
+
+        contentNode.innerHTML = content;
+        placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+        placeOverlay.setMap(map);
+
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+            body.style.overflow = 'hidden';
+        }
+    }
+
+
+    // 각 카테고리에 클릭 이벤트를 등록합니다
+    function addCategoryClickEvent() {
+        var category = document.getElementById('category'),
+            children = category.children;
+
+        for (var i=0; i<children.length; i++) {
+            children[i].onclick = onClickCategory;
+        }
+    }
+
+    // 카테고리를 클릭했을 때 호출되는 함수입니다
+    function onClickCategory() {
+        var id = this.id,
+            className = this.className;
+
+        placeOverlay.setMap(null);
+
+        if (className === 'on') {
+            currCategory = '';
+            changeCategoryClass();
+            removeMarker();
+        } else {
+            currCategory = id;
+            changeCategoryClass(this);
+            searchPlaces();
+        }
+    }
+
+    // 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
+    function changeCategoryClass(el) {
+        var category = document.getElementById('category'),
+            children = category.children,
+            i;
+
+        for ( i=0; i<children.length; i++ ) {
+            children[i].className = '';
+        }
+
+        if (el) {
+            el.className = 'on';
+        }
+    }
+
+    // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+    var mapTypeControl = new kakao.maps.MapTypeControl();
+
+    // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+    var zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.BOTTOMRIGHT);
+
+
+
+    // 3. 위치 수집, GPS 마커 표시 기능(GeoLocation)
+
+    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+    if (navigator.geolocation) {
+        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            var lat = position.coords.latitude, // 위도
+                lon = position.coords.longitude; // 경도
+            var locPosition = new kakao.maps.LatLng(lat, lon); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+
+            // 마커와 인포윈도우를 표시합니다
+            displayMarker(locPosition);
+        });
+    } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+        var locPosition = new kakao.maps.LatLng(x, y);
+        displayMarker(locPosition);
+    }
+
+    // displayMarker 함수(지도에 마커를 표시하는 함수)
+
+    //마커 이미지를 변경
+    let icon = new kakao.maps.MarkerImage(
+        "images/gpsIcon.png",
+        new kakao.maps.Size(20, 20)
+    );
+
+    // 마커 표시 함수
+    function displayMarker(locPosition) {
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: locPosition
+        });
+        marker.setImage(icon);
+        // 지도 중심좌표를 접속위치로 변경합니다
+        map.setCenter(locPosition);
+    }
+
+    // 주소-좌표 변환 객체를 생성합니다
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    // 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
+    searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+
+    // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
+    kakao.maps.event.addListener(map, 'idle', function() {
+        searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+    });
+
+    function searchAddrFromCoords(coords, callback) {
+        // 좌표로 행정동 주소 정보를 요청합니다
+        geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+    }
+
+    function searchDetailAddrFromCoords(coords, callback) {
+        // 좌표로 법정동 상세 주소 정보를 요청합니다
+        geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+    }
+
+    // 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
+    function displayCenterInfo(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            var infoDiv = document.getElementById('centerAddr');
+
+            var infoLng = document.getElementById('centerLatLng');
+
+            //지도 현재 좌표 위도 경도
+            // console.log(map.getCenter())
+            for(var i = 0; i < result.length; i++) {
+                // 행정동의 region_type 값은 'H' 이므로
+                infoDiv.innerHTML = result[i].address.address_name;
+                infoLng.innerHTML = map.getCenter();
+                break;
+
+            }
+        }
+    }
+
+</script>
+<!--map 구현 끝!-->
+
+<script>
+    const modal = document.querySelector('.modal');
+    const btnOpenPopup = document.querySelector('.btn-open-popup');
+    const btnClosePopup = document.querySelector('.modal_close');
+
+    btnOpenPopup.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+    btnClosePopup.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+</script>
+
+//모임생성버튼 클릭시 board 모달 구현
+<script>
+    const boardModal = document.querySelector('.boardModal')
+    const btnOpenPopup2 = document.querySelector('.btn-success');
+    const btnClosePopup2 = document.querySelector('.boardModal_close');
+
+    btnOpenPopup2.addEventListener('click', () => {
+    boardModal.style.display = 'block';
+    });
+
+    btnClosePopup2.addEventListener('click', () => {
+    boardModal.style.display = 'none';
+    });
+</script>
+
+<script>
+    var message = null;
+    if(message!==null){
+        alert(message);
+    }
+    // location.replace(null);
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    function deleteAccount(username){
+        if (!confirm("정말로 삭제하시겠습니까?")) {
+            alert("삭제가 취소되었습니다.")
+        } else {
+            $.ajax({
+                url:'/api/users/'+username,
+                type:'DELETE',
+                success: function (result){
+                    alert('정상적으로 삭제 되었습니다.')
+                    window.location.href="/account/login";
+                }
+            })
+        }
+    }
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>-->
+
+</body>
+
+</html>
