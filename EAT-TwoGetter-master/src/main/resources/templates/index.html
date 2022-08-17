@@ -7,113 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HOME</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="/css/profileModal.css" rel="stylesheet">
+    <link href="/css/modal.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/boardModal.css" rel="stylesheet"/>
     <link href="css/map.css" rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">EAT-Two Getter</a>
-    Sidebar Toggle
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-    <div class="container">
-
-    </div>
-    <p class= "mt-3" style="color: white; width: 100px;">비로그인</p>
-    <div>
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="/account/login">Login</a></li>
-                </ul>
-
-            </li>
-        </ul>
-    </div>
-
-
-
-
-
-
-</nav>
+<nav th:replace = "fragment/common :: menu('home')"></nav>
 <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-            <div class="sb-sidenav-menu">
-                <div class="nav">
-                    <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="index.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Dashboard
-                    </a>
-                    <div class="sb-sidenav-menu-heading">Interface</div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Layouts
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                        </nav>
-                    </div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Pages
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                Authentication
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="login.html">Login</a>
-                                    <a class="nav-link" href="register.html">Register</a>
-                                    <a class="nav-link" href="password.html">Forgot Password</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                Error
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="401.html">401 Page</a>
-                                    <a class="nav-link" href="404.html">404 Page</a>
-                                    <a class="nav-link" href="500.html">500 Page</a>
-                                </nav>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="sb-sidenav-menu-heading">Addons</div>
-                    <a class="nav-link" href="charts.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                        Charts
-                    </a>
-                    <a class="nav-link" href="tables.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                        Tables
-                    </a>
-                </div>
-            </div>
-            <div class="sb-sidenav-footer">
-                <div class="small">Logged in as:</div>
-                Start Bootstrap
-            </div>
-        </nav>
-    </div>
+    <div th:replace = "fragment/common :: side('side')"></div>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
@@ -152,25 +55,95 @@
                         <span id="centerAddr" style="font-size: 20px"></span>
                         <!--현재위치창에 위도, 경도 표시한다.-->
                         <span id="centerLatLng" style="front-size: 20px"></span>
-                        <button type="button" class="btn btn-success" id="build_marker">모임 생성</button>
+                        <button sec:authorize="isAuthenticated()" type="button" class="btn btn-success" id="build_marker">EAT TWO</button>
+                        <a sec:authorize="!isAuthenticated()" type="button" class="btn btn-success" th:href="@{/account/login}">EAT TWO</a>
+                </div>
+            </div>
+
+            <!--모임생성 게시판 모달 구현-->
+            <div sec:authorize="isAuthenticated()">
+                <div class="boardModal">
+                    <div class="boardModal_content">
+                        <h4 class="boardModal_header border-bottom mb-3">현재 위치에 EAT TWO를 띄웁니다!</h4>
+                            <div class="boardModal_body ">
+                                <form action="/post" method="post">
+                                    <div class="form-group row">
+                                        <label for="inputUsername" class="col-sm-2 col-form-label mb-3"><strong>사용자</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="username" class="form-control" id="inputUsername" value="username" th:value="${user.nickname}" readonly></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="locate" class="col-sm-2 col-form-label mb-3"><strong>위치</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="locate" readonly></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lat" class="col-sm-2 col-form-label mb-3"><strong>위도</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="lat" class="form-control" id="lat" readonly/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lng" class="col-sm-2 col-form-label mb-3"><strong>경도</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="lng" class="form-control" id="lng" readonly/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputTitle" class="col-sm-2 col-form-label mb-3"><strong>제목</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="title" class="form-control" id="inputTitle" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="storeType" class="form-control" id="inputStoreType" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputStoreName" class="col-sm-2 col-form-label mb-3"><strong>상호명</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="storeName" class="form-control" id="inputStoreName" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputOrderDetail" class="col-sm-2 col-form-label mb-3"><strong>주문내용</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="orderDetail" class="form-control" id="inputOrderDetail" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputMinimumOrderAmount" class="col-sm-2 col-form-label mb-3"><strong>최소주문금액</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="minimumOrderAmount" class="form-control" id="inputMinimumOrderAmount" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputDeliveryCharge" class="col-sm-2 col-form-label mb-3"><strong>배달요금</strong></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="deliveryCharge" class="form-control" id="inputDeliveryCharge" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputContent" class="col-sm-2 col-form-label mb-3"><strong>기타사항</strong></label>
+                                        <div class="col-sm-10">
+                                            <textarea type="text" name="content" class="form-control" id="inputContent"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto mt-5">
+                                        <button type="submit" class="btn btn-primary" role="button">글쓰기</button>
+                                        <button type="button" class="btn btn-secondary boardModal_close">닫기</button>
+                                    </div>
+                                </form>
+                            </div>
                     </div>
                 </div>
             </div>
-            <!--모임생성 게시판 모달 구현-->
-            <div class="boardModal">
-                <div class="boardModal_body">
-                    <div>모달게시판 구현예정 입니다!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur dolorum est et explicabo ipsa labore laboriosam,
-                        libero maxime minus natus omnis porro praesentium ratione repellat saepe totam unde voluptatum.</div>
-                    <button type="button" class="btn btn-secondary boardModal_close">닫기</button>
-                </div>
-            </div>
+
             <!--모임생성 게시판 모달 구현 끝-->
         </main>
         <footer class="py-4 bg-light mt-auto">
@@ -494,19 +467,28 @@
 
 </script>
 
-//모임생성버튼 클릭시 board 모달 구현
+//게시판 모달 구현
 <script>
     const boardModal = document.querySelector('.boardModal')
     const btnOpenPopup2 = document.querySelector('.btn-success');
     const btnClosePopup2 = document.querySelector('.boardModal_close');
 
+    var infoDiv = document.getElementById('centerAddr')
+    var infoLng = document.getElementById('centerLatLng')
+
     btnOpenPopup2.addEventListener('click', () => {
-    boardModal.style.display = 'block';
+        boardModal.style.display = 'block';
+        document.getElementById('locate').value = infoDiv.innerText
+        //slice(시작인덱스, 끝인덱스)
+        //끝 인덱스 값의 요소는 제외하고 그 전까지 가져온다.
+        document.getElementById('lat').value = infoLng.innerText.split(',')[0].slice(1,-1)
+        document.getElementById('lng').value = infoLng.innerText.split(',')[1].slice(1,-1)
     });
 
     btnClosePopup2.addEventListener('click', () => {
-    boardModal.style.display = 'none';
+        boardModal.style.display = 'none';
     });
+
 </script>
 
 <script>

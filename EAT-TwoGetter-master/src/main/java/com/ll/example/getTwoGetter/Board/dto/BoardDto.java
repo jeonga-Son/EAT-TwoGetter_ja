@@ -23,6 +23,9 @@ public class BoardDto {
     private String content;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
+    private String username;
+    private String lat;
+    private String lng;
 
     public Board toEntity() {
         Board build = Board.builder()
@@ -34,13 +37,17 @@ public class BoardDto {
                 .minimumOrderAmount(minimumOrderAmount)
                 .deliveryCharge(deliveryCharge)
                 .content(content)
+                .username(username)
+                .lat(lat)
+                .lng(lng)
                 .build();
         return build;
     }
 
     @Builder
     public BoardDto(Long id, String title, String storeType, String storeName, String orderDetail, String minimumOrderAmount,
-                    String deliveryCharge, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+                    String deliveryCharge, String content, LocalDateTime createdDate, LocalDateTime modifiedDate, String username,
+                    String lat, String lng) {
         this.id = id;
         this.title = title;
         this.storeType = storeType;
@@ -51,5 +58,8 @@ public class BoardDto {
         this.content = content;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
+        this.username = username;
+        this.lat = lat;
+        this.lng = lng;
     }
 }
