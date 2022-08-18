@@ -50,7 +50,7 @@
                     </ul>
 
                     <img id="pin" src="/images/pin.png" alt="pin" />
-            </div>
+                </div>
 
                 <div class="card address_view">
                     <div class="card-header">
@@ -68,11 +68,11 @@
                     </div>
                 </div>
 
-            <!--모임생성 게시판 모달 구현-->
-            <div sec:authorize="isAuthenticated()">
-                <div class="boardModal">
-                    <div class="boardModal_content">
-                        <h4 class="boardModal_header border-bottom mb-3">현재 위치에 EAT TWO를 띄웁니다!</h4>
+                <!--모임생성 게시판 모달 구현-->
+                <div sec:authorize="isAuthenticated()">
+                    <div class="boardModal">
+                        <div class="boardModal_content">
+                            <h4 class="boardModal_header border-bottom mb-3">현재 위치에 EAT TWO를 띄웁니다!</h4>
                             <div class="boardModal_body ">
                                 <form action="/post" method="post">
                                     <div class="form-group row">
@@ -105,26 +105,26 @@
                                             <input type="text" name="title" class="form-control" id="inputTitle" required />
                                         </div>
                                     </div>
-<!--                                    <div class="form-group row">-->
-<!--                                        <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>-->
-<!--                                        <div class="col-sm-10">-->
-<!--                                            <input type="text" name="storeType" class="form-control" id="inputStoreType" required />-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="form-group row">-->
+                                    <!--                                        <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>-->
+                                    <!--                                        <div class="col-sm-10">-->
+                                    <!--                                            <input type="text" name="storeType" class="form-control" id="inputStoreType" required />-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
 
                                     <div class="form-group row">
-                                    <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>
+                                        <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>
                                         <div class="col-sm-10">
-                                        <select class="form-select" name="storeType" id="inputStoreType" onchange="selectBoxChange(this.value);" aria-label="Default select example">
-                                            <option selected disabled hidden>가게유형을 선택해주세요.</option>
-                                            <option value="한식">한식</option>
-                                            <option value="중식">중식</option>
-                                            <option value="일식">일식</option>
-                                            <option value="양식">양식</option>
-                                            <option value="카페">카페</option>
-                                            <option value="야식">야식</option>
-                                            <option value="기타">기타</option>
-                                        </select>
+                                            <select class="form-select" name="storeType" id="inputStoreType" onchange="selectBoxChange(this.value);" aria-label="Default select example">
+                                                <option selected disabled hidden>가게유형을 선택해주세요.</option>
+                                                <option value="한식">한식</option>
+                                                <option value="중식">중식</option>
+                                                <option value="일식">일식</option>
+                                                <option value="양식">양식</option>
+                                                <option value="카페">카페</option>
+                                                <option value="야식">야식</option>
+                                                <option value="기타">기타</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -166,11 +166,11 @@
                                     <button type="button" class="btn-close btn-close-black boardModal_close2" aria-label="Close"></button>
                                 </form>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-</main>
+        </main>
         <!--모임생성 게시판 모달 구현 끝-->
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
