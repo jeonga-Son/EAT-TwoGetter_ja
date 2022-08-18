@@ -49,7 +49,7 @@ public class Board {
     @LastModifiedDate
     private LocalDateTime modifiedDate;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String username;
 
     //위도

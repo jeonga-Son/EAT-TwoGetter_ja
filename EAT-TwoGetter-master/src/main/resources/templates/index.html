@@ -50,15 +50,23 @@
                     </ul>
 
                     <img id="pin" src="/images/pin.png" alt="pin" />
-                    <div id="address_view">
-                        <p style="font-size: 25px; font-weight: bold">&nbsp;현재 위치</p>
-                        <span id="centerAddr" style="font-size: 20px"></span>
-                        <!--현재위치창에 위도, 경도 표시한다.-->
-                        <span id="centerLatLng" style="front-size: 20px"></span>
-                        <button sec:authorize="isAuthenticated()" type="button" class="btn btn-success" id="build_marker">EAT TWO</button>
-                        <a sec:authorize="!isAuthenticated()" type="button" class="btn btn-success" th:href="@{/account/login}">EAT TWO</a>
-                </div>
             </div>
+
+                <div class="card address_view">
+                    <div class="card-header">
+                        위치정보
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">현재 위치</h5>
+                        <p class="card-text">
+                            <span id="centerAddr" style="font-size: 20px"></span>
+                            <!--현재위치창에 위도, 경도 표시한다.-->
+                            <span id="centerLatLng" style="front-size: 20px"></span>
+                        </p>
+                        <button sec:authorize="isAuthenticated()" type="button" class="btn btn-success btn-lg build_marker" id="build_marker">EAT TWO</button>
+                        <a sec:authorize="!isAuthenticated()" type="button" id="build_marker2" class="btn btn-success btn-lg build_marker" th:href="@{/account/login}">EAT TWO</a>
+                    </div>
+                </div>
 
             <!--모임생성 게시판 모달 구현-->
             <div sec:authorize="isAuthenticated()">
@@ -68,9 +76,9 @@
                             <div class="boardModal_body ">
                                 <form action="/post" method="post">
                                     <div class="form-group row">
-                                        <label for="inputUsername" class="col-sm-2 col-form-label mb-3"><strong>사용자</strong></label>
+                                        <label for="username" class="col-sm-2 col-form-label mb-3"><strong>닉네임</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="username" class="form-control" id="inputUsername" value="username" th:value="${user.nickname}" readonly></input>
+                                            <input type="text" name="username" class="form-control" id="username" value="username" th:value="${user.nickname}" readonly></input>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -94,38 +102,38 @@
                                     <div class="form-group row">
                                         <label for="inputTitle" class="col-sm-2 col-form-label mb-3"><strong>제목</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="title" class="form-control" id="inputTitle" />
+                                            <input type="text" name="title" class="form-control" id="inputTitle" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="storeType" class="form-control" id="inputStoreType" />
+                                            <input type="text" name="storeType" class="form-control" id="inputStoreType" required />
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="inputStoreName" class="col-sm-2 col-form-label mb-3"><strong>상호명</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="storeName" class="form-control" id="inputStoreName" />
+                                            <input type="text" name="storeName" class="form-control" id="inputStoreName" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputOrderDetail" class="col-sm-2 col-form-label mb-3"><strong>주문내용</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="orderDetail" class="form-control" id="inputOrderDetail" />
+                                            <input type="text" name="orderDetail" class="form-control" id="inputOrderDetail" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputMinimumOrderAmount" class="col-sm-2 col-form-label mb-3"><strong>최소주문금액</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="minimumOrderAmount" class="form-control" id="inputMinimumOrderAmount" />
+                                            <input type="text" name="minimumOrderAmount" class="form-control" id="inputMinimumOrderAmount" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputDeliveryCharge" class="col-sm-2 col-form-label mb-3"><strong>배달요금</strong></label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="deliveryCharge" class="form-control" id="inputDeliveryCharge" />
+                                            <input type="text" name="deliveryCharge" class="form-control" id="inputDeliveryCharge" required />
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -138,14 +146,15 @@
                                         <button type="submit" class="btn btn-primary" role="button">글쓰기</button>
                                         <button type="button" class="btn btn-secondary boardModal_close">닫기</button>
                                     </div>
+                                    <button type="button" class="btn-close btn-close-black boardModal_close2" aria-label="Close"></button>
                                 </form>
                             </div>
                     </div>
                 </div>
             </div>
-
-            <!--모임생성 게시판 모달 구현 끝-->
-        </main>
+        </div>
+</main>
+        <!--모임생성 게시판 모달 구현 끝-->
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
@@ -470,8 +479,9 @@
 //게시판 모달 구현
 <script>
     const boardModal = document.querySelector('.boardModal')
-    const btnOpenPopup2 = document.querySelector('.btn-success');
+    const btnOpenPopup2 = document.querySelector('.build_marker');
     const btnClosePopup2 = document.querySelector('.boardModal_close');
+    const btnClosePopup3 = document.querySelector('.boardModal_close2');
 
     var infoDiv = document.getElementById('centerAddr')
     var infoLng = document.getElementById('centerLatLng')
@@ -487,6 +497,10 @@
 
     btnClosePopup2.addEventListener('click', () => {
         boardModal.style.display = 'none';
+    });
+
+    btnClosePopup3.addEventListener('click', () => {
+    boardModal.style.display = 'none';
     });
 
 </script>
