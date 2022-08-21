@@ -21,6 +21,7 @@
                         class="form-control"
                         id="inputTitle"
                         th:value="${post.title}"
+                        required
                 />
             </div>
         </div>
@@ -59,7 +60,8 @@
                         name="lat"
                         class="form-control"
                         th:value="${post.lat}"
-                        id="lat" readonly/>
+                        id="lat"
+                        readonly/>
             </div>
         </div>
 
@@ -79,13 +81,13 @@
             <label for="inputStoreType" class="col-sm-2 col-form-label mb-3"><strong>가게유형</strong></label>
             <div class="col-sm-10">
                 <select class="form-select"
-                        th:value="${post.storeType}"
+                        required="required"
                         name="storeType"
                         id="inputStoreType"
                         onchange="selectBoxChange(this.value);"
                         aria-label="Default select example">
 
-                    <option selected disabled hidden>가게유형을 선택해주세요.</option>
+                    <option value="" selected disabled hidden>가게유형을 선택해주세요.</option>
                     <option value="한식">한식</option>
                     <option value="중식">중식</option>
                     <option value="일식">일식</option>
@@ -97,18 +99,6 @@
             </div>
         </div>
 
-<!--        <div class="form-group row">-->
-<!--            <label for="inputStoreType" class="col-sm-2 col-form-label"><strong>가게유형</strong></label>-->
-<!--            <div class="col-sm-10">-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        name="storeType"-->
-<!--                        class="form-control"-->
-<!--                        id="inputStoreType"-->
-<!--                        th:value="${post.storeType}"-->
-<!--                />-->
-<!--            </div>-->
-<!--        </div>-->
 
         <div class="form-group row">
             <label for="inputStoreName" class="col-sm-2 col-form-label"><strong>상호명</strong></label>
@@ -119,6 +109,7 @@
                         class="form-control"
                         id="inputStoreName"
                         th:value="${post.storeName}"
+                        required
                 />
             </div>
         </div>
@@ -132,6 +123,7 @@
                         class="form-control"
                         id="inputOrderDetail"
                         th:value="${post.orderDetail}"
+                        required
                 />
             </div>
         </div>
@@ -145,12 +137,13 @@
                         class="form-control"
                         id="inputMinimumOrderAmount"
                         th:value="${post.minimumOrderAmount}"
+                        required
                 />
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputDeliveryCharge" class="col-sm-2 col-form-label"><strong>최소주문금액</strong></label>
+            <label for="inputDeliveryCharge" class="col-sm-2 col-form-label"><strong>배달요금</strong></label>
             <div class="col-sm-10">
                 <input
                         type="text"
@@ -158,6 +151,7 @@
                         class="form-control"
                         id="inputDeliveryCharge"
                         th:value="${post.deliveryCharge}"
+                        required
                 />
             </div>
         </div>

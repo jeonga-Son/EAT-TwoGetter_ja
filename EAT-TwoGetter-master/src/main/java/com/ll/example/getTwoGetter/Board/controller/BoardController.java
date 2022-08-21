@@ -4,6 +4,7 @@
 package com.ll.example.getTwoGetter.Board.controller;
 
 
+import com.ll.example.getTwoGetter.Board.domain.entity.Board;
 import com.ll.example.getTwoGetter.Board.dto.BoardDto;
 import com.ll.example.getTwoGetter.Board.service.BoardService;
 import org.springframework.stereotype.Controller;
