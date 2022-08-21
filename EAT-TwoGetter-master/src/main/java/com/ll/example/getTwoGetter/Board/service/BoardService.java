@@ -76,7 +76,6 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
-
     public List<Board> findAll() {
         List<Board> boards = boardRepository.findAll();
         return boards;

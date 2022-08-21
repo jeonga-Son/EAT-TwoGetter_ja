@@ -31,13 +31,13 @@ public class BoardController {
 
     @GetMapping("/post")
     public String post() {
-        return "board/post.html";
+        return "index.html";
     }
 
     @PostMapping("/post")
     public String write(BoardDto boardDto) {
         boardService.savePost(boardDto);
-        return "redirect:/board";
+        return "redirect:/";
     }
 
     @GetMapping("/post/{id}")
@@ -66,4 +66,5 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/board";
     }
+
 }

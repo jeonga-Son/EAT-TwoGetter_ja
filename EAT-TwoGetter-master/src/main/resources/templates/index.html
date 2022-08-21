@@ -161,6 +161,7 @@
                     </div>
                 </div>
 
+
         <!--모임생성 게시판 모달 구현 끝-->
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
@@ -470,6 +471,47 @@
 </script>
 <!--map 구현 끝!-->
 
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    let boardInfo = /*[[${board}]]*/;
+    /*]]>*/
+</script>
+
+<script>
+    var arrLat = [];
+    var arrLng = [];
+    var positions = [];
+    var imageSrc2 = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+    showBoard();
+
+        function showBoard() {
+            for (var i = 0; i < boardInfo.length; i++) {
+                arrLat[i] = boardInfo[i].lat;
+                arrLng[i] = boardInfo[i].lng;
+            }
+
+            for (var i = 0; i < boardInfo.length; i++) {
+              positions[i] = new kakao.maps.LatLng(arrLat[i], arrLng[i]);
+            }
+
+            for (var i = 0; i < positions.length; i++) {
+
+                // 마커 이미지의 이미지 크기 입니다
+                var imageSize2 = new kakao.maps.Size(24, 35);
+
+                // 마커 이미지를 생성합니다
+                var markerImage2 = new kakao.maps.MarkerImage(imageSrc2, imageSize2);
+
+                // 마커를 생성합니다
+                var marker2 = new kakao.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: positions[i], // 마커를 표시할 위치
+                    image : markerImage2 // 마커 이미지
+                });
+            }
+        }
+</script>
+
 <script>
     const modal = document.querySelector('.modal');
     const btnOpenPopup = document.querySelector('.btn-open-popup');
@@ -482,9 +524,6 @@
     btnClosePopup.addEventListener('click', () => {
         modal.style.display = 'none';
     });
-
-
-
 </script>
 
 //게시판 모달 구현
@@ -493,11 +532,9 @@
     const btnOpenPopup2 = document.querySelector('.build_marker');
     const btnClosePopup2 = document.querySelector('.boardModal_close');
     const btnClosePopup3 = document.querySelector('.boardModal_close2');
-    const btnWrite = document.querySelector('.btn-write');
 
     var infoDiv = document.getElementById('centerAddr')
     var infoLng = document.getElementById('centerLatLng')
-
 
     btnOpenPopup2.addEventListener('click', () => {
         boardModal.style.display = 'block';
@@ -515,14 +552,6 @@
     btnClosePopup3.addEventListener('click', () => {
         boardModal.style.display = 'none';
     });
-
-        btnWrite.addEventListener('click', () => {
-
-        // 마커가 지도 위에 표시되도록 설정합니다
-        marker2.setMap(map);
-    });
-
-
 
 </script>
 

@@ -30,6 +30,8 @@ public class HomeController {
             User user = userService.findByUsename(username);
             model.addAttribute("user",user);
 
+            List<Board> boards = boardService.findAll();
+            model.addAttribute("board", boards);
         }
         if(session.getAttribute("message")!=null){
             String message = (String) session.getAttribute("message");
@@ -38,12 +40,7 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/boardInfo")
-    public String board(Model model) {
-        List<Board> boards = boardService.findAll();
-        model.addAttribute("board", boards);
-        return "user";
-    }
+
 //    @GetMapping("/assets/demo/chart-area-demo.js")
 //    public String redirectHome(){
 //        return "redirect:/";
