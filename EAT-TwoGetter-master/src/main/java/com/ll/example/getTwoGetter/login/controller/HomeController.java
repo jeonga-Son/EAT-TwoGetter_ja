@@ -1,7 +1,9 @@
 package com.ll.example.getTwoGetter.login.controller;
 
 import com.ll.example.getTwoGetter.Board.domain.entity.Board;
+import com.ll.example.getTwoGetter.Board.domain.repository.BoardRepository;
 import com.ll.example.getTwoGetter.Board.service.BoardService;
+import com.ll.example.getTwoGetter.login.Repository.UserRepository;
 import com.ll.example.getTwoGetter.login.Service.UserService;
 import com.ll.example.getTwoGetter.login.model.User;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -18,7 +21,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Controller
 public class HomeController {
-
 
     private final UserService userService;
     private final BoardService boardService;
@@ -40,9 +42,4 @@ public class HomeController {
         return "index";
     }
 
-
-//    @GetMapping("/assets/demo/chart-area-demo.js")
-//    public String redirectHome(){
-//        return "redirect:/";
-//    }
 }

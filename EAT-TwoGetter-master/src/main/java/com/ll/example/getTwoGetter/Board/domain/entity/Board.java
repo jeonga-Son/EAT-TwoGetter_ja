@@ -23,7 +23,6 @@ public class Board {
     private Long id;
     @Column(length = 100, nullable = false)
     private String title;
-
     @Column(length = 100, nullable = false)
     private String storeType;
 
@@ -32,10 +31,8 @@ public class Board {
 
     @Column(length = 100, nullable = false)
     private String orderDetail;
-
     @Column(length = 100, nullable = false)
     private String minimumOrderAmount;
-
     @Column(length = 100, nullable = false)
     private String deliveryCharge;
 
@@ -48,18 +45,14 @@ public class Board {
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
-
-    @Column(length = 100, nullable = false)
+    @Column(length = 100)
     private String username;
 
-    //위도
-    @Column(length = 100, nullable = false)
+    @Column(length = 100)
     private String lat;
 
-    //경도
-    @Column(length = 100, nullable = false)
+    @Column(length = 100)
     private String lng;
-
 
     @Builder
     public Board(Long id, String title,  String storeType, String storeName, String orderDetail, String minimumOrderAmount,
