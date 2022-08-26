@@ -80,4 +80,10 @@ public class BoardService {
         List<Board> boards = boardRepository.findAll();
         return boards;
     }
+
+    //findById 만 옵셔널로 가져옴!!
+    public Board findById(long id) {
+       Board board =  boardRepository.findById(id).orElse(null);
+       return board;
+    }
 }

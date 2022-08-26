@@ -397,13 +397,6 @@
 
 
 
-<script>
-    var message = null;
-    if(message!==null){
-        alert(message);
-    }
-    // location.replace(null);
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 //게시판 모달 구현
@@ -433,8 +426,6 @@
         boardModal.style.display = 'none';
     });
 </script>
-
-
 
 <script>
     var message = null;
@@ -472,6 +463,8 @@
 </script>
 
 <script>
+<!--console.log(boardInfo);-->
+
     var arrLat = [];
     var arrLng = [];
     var positions = [];
@@ -511,6 +504,7 @@
 
     showBoardMarker();
 
+
     function showBoardMarker() {
 
         for (var i = 0; i < boardInfo.length; i++) {
@@ -545,11 +539,20 @@
             title: idBoard2
         });
 
+<!--        console.log(boardInfo[2].content);-->
+
         kakao.maps.event.addListener(marker2, 'click', function() {
             if(user1==null){
                 alert("로그인 이후 가능합니다")
                 location.href="/account/login"
             }
+
+            console.log(marker2.getTitle())
+            fetch(`/getMarkerBoard/${marker2.getTitle()}`)
+                .then(data=>data.json())
+                .then(responseData=>{
+                    console.log(responseData)})
+
 
             for(var i=0; i<boardInfo.length; i++){
                 let geocoder = new kakao.maps.services.Geocoder();

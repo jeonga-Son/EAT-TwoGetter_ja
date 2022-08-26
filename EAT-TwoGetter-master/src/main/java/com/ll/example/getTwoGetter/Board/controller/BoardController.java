@@ -40,12 +40,21 @@ public class BoardController {
         return "redirect:/";
     }
 
+
     @GetMapping("/post/{id}")
     public String detail(@PathVariable("id") Long id, Model model) {
         BoardDto boardDto = boardService.getPost(id);
         //boardDto 객체를 post 이름으로 추가한다.
         model.addAttribute("post", boardDto);
         return "board/detail.html";
+    }
+
+    @GetMapping("/getMarkerBoard/{id}")
+    @ResponseBody
+    public Board getMarkerBoard(@PathVariable long id) {
+        System.out.println(id);
+        Board board = boardService.findById(id);
+        return board;
     }
 
     @GetMapping("/post/edit/{id}")
