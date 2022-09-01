@@ -30,7 +30,7 @@ public class BoardService {
         List<Board> boardList = boardRepository.findAll();
         List<BoardDto> boardDtoList = new ArrayList<>();
 
-        for(Board board : boardList) {
+        for (Board board : boardList) {
             BoardDto boardDto = BoardDto.builder()
                     .id(board.getId())
                     .title(board.getTitle())
@@ -83,7 +83,13 @@ public class BoardService {
 
     //findById 만 옵셔널로 가져옴!!
     public Board findById(long id) {
-       Board board =  boardRepository.findById(id).orElse(null);
-       return board;
+        Board board = boardRepository.findById(id).orElse(null);
+        return board;
+    }
+
+
+    public List<Board> findByStoreType(String storeType) {
+        List<Board> boards = boardRepository.findByStoreType(storeType);
+        return boards;
     }
 }

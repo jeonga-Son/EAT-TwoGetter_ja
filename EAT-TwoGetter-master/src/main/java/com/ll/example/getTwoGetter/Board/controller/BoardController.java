@@ -56,6 +56,14 @@ public class BoardController {
         Board board = boardService.findById(id);
         return board;
     }
+    @GetMapping("/getStoreType/{storeType}")
+    @ResponseBody
+    public List<Board> getStoreType(@PathVariable String storeType) {
+        System.out.println(storeType);
+        List<Board> boards = boardService.findByStoreType(storeType);
+        return boards;
+    }
+
 
     @GetMapping("/post/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
