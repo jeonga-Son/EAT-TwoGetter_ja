@@ -56,6 +56,7 @@ public class BoardController {
         Board board = boardService.findById(id);
         return board;
     }
+
     @GetMapping("/getStoreType/{storeType}")
     @ResponseBody
     public List<Board> getStoreType(@PathVariable String storeType) {

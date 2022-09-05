@@ -31,7 +31,7 @@ public class Board {
 
     @Column(length = 100, nullable = false)
     private String orderDetail;
-    @Column(length = 100, nullable = false)
+    @Column(length = 5, nullable = false)
     private String minimumOrderAmount;
     @Column(length = 100, nullable = false)
     private String deliveryCharge;
